@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<app>
+    <id>1</id>
+    <name>Delivery App</name>
+    <version>1.0</version>
+    <platform>iOS, Android</platform>
+</app>

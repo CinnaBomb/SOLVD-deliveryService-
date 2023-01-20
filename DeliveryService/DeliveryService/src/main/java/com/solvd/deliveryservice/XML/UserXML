@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+  <user>
+    <id>1</id>
+    <fname>John</fname>
+    <lname>Doe</lname>
+    <email>johndoe@example.com</email>
+    <address>123 Main St</address>
+    <phone>555-555-5555</phone>
+  </user>
+  <user>
+    <id>2</id>
+    <fname>Jane</fname>
+    <lname>Smith</lname>
+    <email>janesmith@example.com</email>
+    <address>456 Park Ave</address>
+    <phone>555-555-5556</phone>
+  </user>
+</users>
