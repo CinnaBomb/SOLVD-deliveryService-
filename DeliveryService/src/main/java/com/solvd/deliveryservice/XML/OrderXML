@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order>
+  <id>1</id>
+  <price>20.99</price>
+  <avgOrders>5</avgOrders>
+  <idUser>1</idUser>
+  <addressId>1</addressId>
+</Order>

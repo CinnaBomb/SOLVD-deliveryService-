@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<store>
+    <id>1</id>
+    <name>Best Buy</name>
+    <location>New York</location>
+    <items>
+        <item>
+            <name>Television</name>
+            <price>500</price>
+        </item>
+        <item>
+            <name>Laptop</name>
+            <price>1000</price>
+        </item>
+    </items>
+</store>

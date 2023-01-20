@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<car>
+    <id>1</id>
+    <make>Toyota</make>
+    <model>Camry</model>
+</car>
