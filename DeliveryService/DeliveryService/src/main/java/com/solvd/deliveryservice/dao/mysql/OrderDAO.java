@@ -1,59 +1,31 @@
 package com.solvd.deliveryservice.dao.mysql;
 
-import com.solvd.deliveryservice.order.Order;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.sql.DataSource;
+import com.solvd.deliveryservice.models.Order;
 
 public class OrderDAO {
-    private DataSource dataSource;
 
-    public OrderDAO(DataSource dataSource) {
-        this.dataSource = dataSource;
+    private static final OrderDAO INSTANCE = new OrderDAO();
+
+    private OrderDAO() {}
+
+    public static OrderDAO getInstance() {
+        return INSTANCE;
     }
 
-    public Order getOrder(int id) {
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        Order order = null;
+    public void insertOrder(Order order) {
+        // code to insert order object into the database
+    }
 
-        try {
-            conn = dataSource.getConnection();
-            stmt = conn.prepareStatement("SELECT * FROM orders WHERE id = ?");
-            stmt.setInt(1, id);
-            rs = stmt.executeQuery();
+    public Order getOrder(int orderId) {
+        // code to retrieve order from the database based on order id
+        return null;
+    }
 
-            if (rs.next()) {
-                order = new Order();
-                order.setId(rs.getInt("id"));
-                order.setPrice((int) rs.getDouble("price"));
-                order.setAvgOrders(rs.getInt("avgOrders"));
-                order.setUserId(rs.getInt("userId"));
-                order.setAddressId(rs.getInt("addressId"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (stmt != null) {
-                    stmt.close();
-                }
-                //connection is returned to the pool here
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return order;
+    public void updateOrder(Order order) {
+        // code to update order in the database
+    }
+
+    public void deleteOrder(int orderId) {
+        // code to delete order from the database based on order id
     }
 }
-

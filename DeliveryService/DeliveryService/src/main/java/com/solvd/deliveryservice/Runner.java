@@ -1,16 +1,12 @@
 package com.solvd.deliveryservice;
 
-import com.solvd.deliveryservice.services.DAOFactory;
-import com.solvd.deliveryservice.utils.Connection;
 import dao.IBaseDAO;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.SQLException;
 import java.util.Properties;
 import java.util.function.Supplier;
-import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class Runner {
@@ -29,13 +25,19 @@ public static void main(String[] args) throws Exception {
     String username = prop.getProperty("db.username");
     String password = prop.getProperty("db.password");
 
-    try {
-        DAOFactory daoFactory = DAOFactory.getInstance(url,username,password);
-        IBaseDAO<Object> objectDAO = (IBaseDAO<Object>) daoFactory.getDAO("MySQL");
+    DAOFactory daoFactory = DAOFactory.getInstance(url,username,password);
+    IBaseDAO<Object> objectDAO = (IBaseDAO<Object>) daoFactory.getDAO("MySQL");
 
-    } catch (SQLException e) {
-        logger.info((Supplier<String>) e);
-    }
 }
+
+    private static class DAOFactory {
+        public static DAOFactory getInstance(String url, String username, String password) {
+            return null;
+        }
+
+        public Object getDAO(String mySQL) {
+            return null;
+        }
+    }
 }
 
