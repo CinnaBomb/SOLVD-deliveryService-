@@ -1,78 +1,31 @@
 package com.solvd.deliveryservice.dao.mysql;
 
-import com.solvd.deliveryservice.app.App;
-import com.solvd.deliveryservice.utils.ConnectionPool;
+import com.solvd.deliveryservice.models.App;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+public class AppDAO {
 
-class AppDAO {
-    private ConnectionPool pool;
+    private static final AppDAO INSTANCE = new AppDAO();
 
-    public AppDAO() throws SQLException, InterruptedException {
-        pool = ConnectionPool.getInstance();
+    private AppDAO() {}
+
+    public static AppDAO getInstance() {
+        return INSTANCE;
     }
 
-    public void addApp(App app) throws InterruptedException {
-        Connection connection = (Connection) pool.getConnection();
-        try {
-            PreparedStatement ps = connection.prepareStatement(
-                    "INSERT INTO APP (id, name) VALUES (?, ?)");
-            ps.setInt(1, app.getId());
-            ps.setString(2, app.getName());
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            pool.putConnection(connection);
-        }
+    public void insertApp(App app) {
+        // code to insert app object into the database
     }
 
-    public App getApp(int id) throws InterruptedException {
-        Connection connection = (Connection) pool.getConnection();
-        try {
-            PreparedStatement ps = connection.prepareStatement(
-                    "SELECT * FROM APP WHERE id = ?");
-            ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                App app = new App();
-                app.setId(rs.getInt("id"));
-                app.setName(rs.getString("name"));
-                return app;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            pool.putConnection(connection);
-        }
+    public App getApp(int appId) {
+        // code to retrieve app from the database based on app id
         return null;
     }
 
-    public void updateApp(App app) throws InterruptedException {
-        Connection connection = (Connection) pool.getConnection();
-        try {
-            PreparedStatement ps = connection.prepareStatement(
-                    "UPDATE APP SET name = ? WHERE id = ?");
-            ps.setString(1, app.getName());
-            ps.setInt(2, app.getId());
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            pool.putConnection(connection);
-        }
+    public void updateApp(App app) {
+        // code to update app in the database
     }
 
-    public void deleteApp(int id) throws SQLException, InterruptedException {
-        Connection connection = (Connection) pool.getConnection();
-        try {
-            PreparedStatement ps = connection.prepareStatement(
-                    "DELETE FROM APP WHERE id = ?");
-        } finally {
-
-        }
+    public void deleteApp(int appId) {
+        // code to delete app from the database based on app id
     }
 }

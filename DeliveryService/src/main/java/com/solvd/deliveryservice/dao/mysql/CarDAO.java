@@ -1,69 +1,33 @@
 package com.solvd.deliveryservice.dao.mysql;
 
-import com.solvd.deliveryservice.car.Car;
-import com.solvd.deliveryservice.utils.ConnectionPool;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import com.solvd.deliveryservice.models.Car;
 
 public class CarDAO {
 
-    private ConnectionPool pool;
+    private static final CarDAO INSTANCE = new CarDAO();
 
-    public CarDAO(ConnectionPool pool) {
-        this.pool = pool;
+    private CarDAO() {}
+
+    public static CarDAO getInstance() {
+        return INSTANCE;
     }
 
-    public void addCar(Car car) throws SQLException, InterruptedException {
-        Connection connection = (Connection) pool.getConnection();
-        try {
-            PreparedStatement statement = connection.prepareStatement(
-                    "INSERT INTO CAR (MAKE, MODEL) VALUES (?, ?)"
-            );
-            statement.setString(1, car.getMake());
-            statement.setString(2, car.getModel());
-            statement.executeUpdate();
-        } finally {
-            pool.putConnection(connection);
-        }
+    public void insertCar(Car car) {
+        // code to insert car object into the database
     }
 
-    public Car getCarById(int id) throws SQLException, InterruptedException {
-        Connection connection = (Connection) pool.getConnection();
-        try {
-            PreparedStatement statement = connection.prepareStatement(
-                    "SELECT * FROM CAR WHERE id = ?"
-            );
-            statement.setInt(1, id);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                return new Car(
-                        resultSet.getInt("id"),
-                        resultSet.getString("MAKE"),
-                        resultSet.getString("MODEL")
-                );
-            }
-            return null;
-        } finally {
-            pool.putConnection(connection);
-        }
+    public Car getCar(int carId) {
+        // code to retrieve car from the database based on car id
+        return null;
     }
 
-    public void updateCar(Car car) throws SQLException, InterruptedException {
-        Connection connection = (Connection) pool.getConnection();
-        try {
-            PreparedStatement statement = connection.prepareStatement(
-                    "UPDATE CAR SET MAKE = ?, MODEL = ? WHERE id = ?"
-            );
-            statement.setString(1, car.getMake());
-            statement.setString(2, car.getModel());
-            statement.setInt(3, car.getId());
-            statement.executeUpdate();
-        } finally {
+    public void updateCar(Car car) {
+        // code to update car in the database
+    }
 
-        }
+    public void deleteCar(int carId) {
+        // code to delete car from the database based on car id
     }
 }
+
 

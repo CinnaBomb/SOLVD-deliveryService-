@@ -1,0 +1,7 @@
+{
+    "id": 1,
+    "name": "Standard",
+    "description": "This is the standard license",
+    "price": 99.99,
+    "validity": 365
+}

@@ -1,52 +1,31 @@
 package com.solvd.deliveryservice.dao.mysql;
 
-import com.solvd.deliveryservice.user.User;
-import com.solvd.deliveryservice.utils.ConnectionPool;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import com.solvd.deliveryservice.models.User;
 
 public class UserDAO {
-    private ConnectionPool pool;
 
-    public UserDAO(ConnectionPool pool) {
-        this.pool = pool;
+    private static final UserDAO INSTANCE = new UserDAO();
+
+    private UserDAO() {}
+
+    public static UserDAO getInstance() {
+        return INSTANCE;
     }
 
-    public User getUser(int id) throws InterruptedException {
-        Connection connection = (Connection) pool.getConnection();
-        try {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM USER WHERE id = ?");
-            statement.setInt(1, id);
-            ResultSet rs = statement.executeQuery();
-            if (rs.next()) {
-                User user = new User();
-                user.setId(rs.getInt("id"));
-                user.setFname(rs.getString("fname"));
-                user.setLname(rs.getString("lname"));
-                return user;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            pool.returnConnection(connection);
-        }
+    public void insertUser(User user) {
+        // code to insert user object into the database
+    }
+
+    public User getUser(int userId) {
+        // code to retrieve user from the database based on user id
         return null;
     }
 
-    public void addUser(User user) throws InterruptedException {
-        Connection connection = (Connection) pool.getConnection();
-        try {
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO USER (fname, lname) VALUES (?, ?)");
-            statement.setString(1, user.getFname());
-            statement.setString(2, user.getLname());
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            pool.returnConnection(connection);
-        }
+    public void updateUser(User user) {
+        // code to update user in the database
+    }
+
+    public void deleteUser(int userId) {
+        // code to delete user from the database based on user id
     }
 }

@@ -1,64 +1,35 @@
 package com.solvd.deliveryservice.dao.mysql;
 
-import com.solvd.deliveryservice.utils.ConnectionPool;
+import com.solvd.deliveryservice.XML.DeliveryService;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeliveryServiceDAO<DeliveryService> {
-    private ConnectionPool pool;
+public class DeliveryServiceDAO {
 
-    public DeliveryServiceDAO(ConnectionPool pool) {
-        this.pool = pool;
+    private static final DeliveryServiceDAO INSTANCE = new DeliveryServiceDAO();
+
+    private DeliveryServiceDAO() {}
+
+    public static DeliveryServiceDAO getInstance() {
+        return INSTANCE;
     }
 
-    public List<DeliveryService> getAllDeliveryServices() throws SQLException, InterruptedException {
-        List<DeliveryService> deliveryServices = new ArrayList<>();
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-
-        try {
-            conn = (Connection) pool.getConnection();
-            String query = "SELECT * FROM DELIVERYSERVICE_COMPANY";
-            stmt = conn.prepareStatement(query);
-            rs = stmt.executeQuery();
-
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String address = rs.getString("ADRESS");
-                String name = rs.getString("NAME");
-                int idAPP = rs.getInt("idAPP");
-            }
-        } finally {
-            pool.putConnection(conn);
-            if (stmt != null) stmt.close();
-            if (rs != null) rs.close();
-        }
-
-        return deliveryServices;
+    public void insertDeliveryService(DeliveryService deliveryService) {
+        // code to insert deliveryService object into the database
     }
 
-    public DeliveryService getDeliveryServiceById(int id) throws SQLException, InterruptedException {
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-
-        try {
-            conn = (Connection) pool.getConnection();
-            String query = "SELECT * FROM DELIVERYSERVICE_COMPANY WHERE id = ?";
-            stmt = conn.prepareStatement(query);
-            stmt.setInt(1, id);
-            rs = stmt.executeQuery();
-
-        } finally {
-
-        }
+    public DeliveryService getDeliveryService(int deliveryServiceId) {
+        // code to retrieve deliveryService from the database based on deliveryService id
         return null;
     }
-}
 
+    public void updateDeliveryService(DeliveryService deliveryService) {
+        // code to update deliveryService in the database
+    }
+
+    public void deleteDeliveryService(int deliveryServiceId) {
+        // code to delete deliveryService from the database based on deliveryService id
+    }
+}

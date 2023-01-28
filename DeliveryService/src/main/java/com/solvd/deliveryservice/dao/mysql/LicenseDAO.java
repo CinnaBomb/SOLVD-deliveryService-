@@ -1,45 +1,31 @@
 package com.solvd.deliveryservice.dao.mysql;
 
-import com.solvd.deliveryservice.utils.ConnectionPool;
-import com.solvd.deliveryservice.liscense.Liscense;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import com.solvd.deliveryservice.models.License;
 
-public class LicenseDAO<License> {
-    private ConnectionPool pool;
+public class LicenseDAO {
 
-    public LicenseDAO(ConnectionPool pool) {
-        this.pool = pool;
+    private static final LicenseDAO INSTANCE = new LicenseDAO();
+
+    private LicenseDAO() {}
+
+    public static LicenseDAO getInstance() {
+        return INSTANCE;
     }
 
-    public void insertLicense(License license) throws InterruptedException {
-        Connection conn = (Connection) pool.getConnection();
-        PreparedStatement ps = null;
-        try {
-            String sql = "INSERT INTO License (id, license_number, expiration_date) VALUES (?, ?, ?)";
-            ps = conn.prepareStatement(sql);
-            ps.setInt(1, Liscense.getId());
-            ps.setString(2, Liscense.getLicenseNumber());
-            ps.setDate(3, Liscense.getExpirationDate());
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            // Return the connection to the pool
-            pool.returnConnection(conn);
-            try {
-                if (ps != null) {
-                    ps.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+    public void insertLicense(License license) {
+        // code to insert license object into the database
     }
 
-    public License getLicenseById(int id) {
+    public License getLicense(String licenseNumber) {
+        // code to retrieve license from the database based on license number
         return null;
     }
-}
 
+    public void updateLicense(License license) {
+        // code to update license in the database
+    }
+
+    public void deleteLicense(String licenseNumber) {
+        // code to delete license from the database based on license number
+    }
+}

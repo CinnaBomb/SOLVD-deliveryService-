@@ -8,7 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeliveryService {
-    
+
+    public DeliveryService(String orderId, String customerName, String deliveryAddress, String status) {
+    }
+
+    public DeliveryService() {
+
+    }
+
     public static List<DeliveryService> parseXML(String fileName) {
         List<DeliveryService> deliveryServices = new ArrayList<>();
         DeliveryService deliveryService = null;
@@ -43,16 +50,32 @@ public class DeliveryService {
         return deliveryServices;
     }
 
-    private void setPhoneNumber(String elementText) {
+    public void setPhoneNumber(String elementText) {
     }
 
     private void setAddress(String elementText) {
     }
 
-    private void setName(String elementText) {
+    public void setName(String elementText) {
     }
 
-    private void setId(int parseInt) {
+    public void setId(int parseInt) {
+    }
+
+    public String getOrderId() {
+        return null;
+    }
+
+    public String getCustomerName() {
+        return null;
+    }
+
+    public String getDeliveryAddress() {
+        return null;
+    }
+
+    public String getStatus() {
+        return null;
     }
 }
 
