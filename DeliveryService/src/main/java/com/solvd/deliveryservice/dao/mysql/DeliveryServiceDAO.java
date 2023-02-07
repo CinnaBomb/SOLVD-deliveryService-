@@ -1,10 +1,6 @@
 package com.solvd.deliveryservice.dao.mysql;
 
-import com.solvd.deliveryservice.XML.DeliveryService;
-
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import com.solvd.deliveryservice.models.DeliveryService;
 
 public class DeliveryServiceDAO {
 

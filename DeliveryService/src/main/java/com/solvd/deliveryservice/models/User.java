@@ -48,12 +48,4 @@ public class User {
 
     public void setId(int id) {
     }
-
-    public String getUsername() {
-        return null;
-    }
-
-    public String getPassword() {
-        return null;
-    }
 }

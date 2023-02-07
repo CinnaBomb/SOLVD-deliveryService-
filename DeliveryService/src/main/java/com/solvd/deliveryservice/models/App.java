@@ -15,25 +15,27 @@ public class App {
 
     }
 
-    public App(int id, String name, String category, double rating) {
+    public String getRating() {
+        return rating;
     }
 
-    public int getId() {
-        return 0;
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 
-    public String getName() {
-        return null;
+    public int getActiveOrders() {
+        return activeOrders;
     }
 
-    public void setId(int id) {
+    public void setActiveOrders(int activeOrders) {
+        this.activeOrders = activeOrders;
     }
 
-    public String getCategory() {
-        return null;
+    public int getDrivers() {
+        return drivers;
     }
 
-    public double getRating() {
-        return 0;
+    public void setDrivers(int drivers) {
+        this.drivers = drivers;
     }
 }

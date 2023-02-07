@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Store Information -->
+    <string name="store_name">ABC Store</string>
+    <string name="store_type">Grocery</string>
+    <string name="store_location">123 Main St, Anytown, USA</string>
+    <string name="store_name">XYZ Store</string>
+    <string name="store_type">Convenience</string>
+    <string name="store_location">456 Main St, Anytown, USA</string>
+    <string name="store_name">MNO Store</string>
+    <string name="store_type">Pharmacy</string>
+    <string name="store_location">789 Main St, Anytown, USA</string>
+
+    <!-- List of Stores -->
+    <string-array name="stores">
+        <item>ABC Store, Grocery, 123 Main St, Anytown, USA</item>
+        <item>XYZ Store, Convenience, 456 Main St, Anytown, USA</item>
+        <item>MNO Store, Pharmacy, 789 Main St, Anytown, USA</item>
+    </string-array>
+</resources>
