@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Order Information -->
+    <string name="order_price">$50.00</string>
+    <string name="average_orders">2</string>
+
+    <!-- List of Orders -->
+    <string-array name="orders">
+        <item>Order 1: $25.00</item>
+        <item>Order 2: $35.00</item>
+        <item>Order 3: $45.00</item>
+    </string-array>
+</resources>

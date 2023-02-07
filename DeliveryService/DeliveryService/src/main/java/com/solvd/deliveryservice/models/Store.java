@@ -42,15 +42,4 @@ public class Store {
     public void setLocation(String location) {
         this.location = location;
     }
-
-    public void setId(int id) {
-    }
-
-    public String getAddress() {
-        return null;
-    }
-
-    public String getPhone() {
-        return null;
-    }
 }

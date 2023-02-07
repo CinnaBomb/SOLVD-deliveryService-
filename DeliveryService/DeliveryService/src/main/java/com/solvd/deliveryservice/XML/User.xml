@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- User Information -->
+    <string name="user_first_name">John</string>
+    <string name="user_last_name">Doe</string>
+    <string name="user_age">30</string>
+    <string name="user_first_name">Jane</string>
+    <string name="user_last_name">Doe</string>
+    <string name="user_age">25</string>
+    <string name="user_first_name">Bob</string>
+    <string name="user_last_name">Smith</string>
+    <string name="user_age">40</string>
+
+    <!-- List of Users -->
+    <string-array name="users">
+        <item>Jane Doe, 25</item>
+        <item>John Doe, 30</item>
+        <item>Bob Smith, 40</item>
+    </string-array>
+</resources>

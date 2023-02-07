@@ -13,19 +13,20 @@ public class AppDAO {
     }
 
     public void insertApp(App app) {
-        // code to insert app object into the database
+        // code to insert car object into the database
     }
 
     public App getApp(int appId) {
-        // code to retrieve app from the database based on app id
+        // code to retrieve car from the database based on car id
         return null;
     }
 
     public void updateApp(App app) {
-        // code to update app in the database
+        // code to update car in the database
     }
 
     public void deleteApp(int appId) {
-        // code to delete app from the database based on app id
+        // code to delete car from the database based on car id
     }
+
 }
