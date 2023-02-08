@@ -50,4 +50,11 @@ public class Item {
     public String getItemDescription() {
         return null;
     }
+
+    public String getItemPrice() {
+        return null;
+    }
+
+    public void setName(String bread) {
+    }
 }

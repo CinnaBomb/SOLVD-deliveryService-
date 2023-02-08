@@ -48,4 +48,10 @@ public class User {
 
     public void setId(int id) {
     }
+
+    public void setName(String john_doe) {
+    }
+
+    public void setEmail(String s) {
+    }
 }

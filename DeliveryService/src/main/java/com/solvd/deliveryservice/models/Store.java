@@ -42,4 +42,7 @@ public class Store {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public void setId(int i) {
+    }
 }

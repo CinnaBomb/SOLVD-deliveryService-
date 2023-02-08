@@ -41,4 +41,10 @@ public class Order {
 
     public void setAddressId(int addressId) {
     }
+
+    public void setStoreId(int i) {
+    }
+
+    public void setTotalCost(double v) {
+    }
 }

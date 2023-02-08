@@ -38,4 +38,10 @@ public class App {
     public void setDrivers(int drivers) {
         this.drivers = drivers;
     }
+
+    public void setVersion(String s) {
+    }
+
+    public void setAuthor(String john_doe) {
+    }
 }
