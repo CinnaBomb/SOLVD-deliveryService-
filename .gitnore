@@ -1,0 +1,13 @@
+src/resources/*.properties
+target/
+logs/
+.idea/
+deliveryService.iml
+.DS_Store/
+/shelf/
+/workspace.xml
+.DS_Store
+src/.DS_Store
+src/main/.DS_Store
+src/main/java/.DS_Store
+src/main/java/com.solvd.deliveryService/.DS_Store
